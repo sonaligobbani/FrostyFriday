@@ -23,7 +23,15 @@ create or replace stage STG_WEEK_4
 -- View files in stage
 list @STG_WEEK_4;
 
-
+-- This is empty to start, so we
+-- need to upload our Spanish_Monarchs.json
+-- file into this stage. This is achieved
+-- with the following commands in a local
+-- SnowSQL console:
+/* --snowsql
+snowsql -a my.account -u my_user -r my_role --private-key-path "path\to\my\ssh\key.p8"
+PUT 'FILE://C:/My/Path/To/Spanish_Monarchs.json' @CH_FROSTY_FRIDAY.WEEK_4.STG_WEEK_4;
+*/
 --creating a file format to load the data into a single row to see and understand the data
 -------------------------------
 -- Investigate files in stage
